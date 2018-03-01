@@ -1,0 +1,22 @@
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          #项目配置仓库的位置 可以是：git文件夹、svn文件夹或者github项目位置，任何能访问到文件的地方
+          uri: https://github.com/niangzi1108/spring-cloud-samples
+          search-paths: config-repo
+#          username: your username
+#          password: your password
+        # 配置仓库的分支
+      label: master
+  application:
+    name: config-server
+server:
+  port: 7080
+  
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7070/eureka/
+

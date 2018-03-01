@@ -1,0 +1,13 @@
+#本地配置
+#server:
+#  port: 7071
+#spring:
+#  application:
+#    name: service-a
+#
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:7070/eureka/
+##分布式注册中心
+#      defaultZone: http://peer1:7090/eureka/,http://peer2:7091/eureka/

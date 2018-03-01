@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: config-client
+  cloud:
+    config:
+      label: master
+      #应用的配置文件
+      profile: dev
+#      uri: http://localhost:7080
+      discovery:
+        #true:从配置中心读取文件
+        enabled: true
+        service-id: config-server
+      #配置文件名(多配置文件逗号隔开）
+      name: db,base
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7070/eureka/
+
+
+server:
+  port: 7081
