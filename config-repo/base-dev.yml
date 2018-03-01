@@ -1,2 +1,3 @@
 app:
+    name: springcloud-demo
     version: 1.0
