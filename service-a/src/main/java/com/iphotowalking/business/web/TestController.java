@@ -30,11 +30,9 @@ public class TestController {
     @Value("${app.version}")
     String appVersion;
 
-    @Value("${jdbc.driver}")
-    String jdbcDriver;
 
     @RequestMapping(value = "/props")
-    public String hi(){
-        return "appName:" + appName +";appVersion:"+ appVersion + "; jdbcDriver:" + jdbcDriver;
+    public String hi() {
+        return "appName:" + appName + ";appVersion:" + appVersion;
     }
 }

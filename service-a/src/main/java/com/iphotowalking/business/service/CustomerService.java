@@ -19,7 +19,7 @@ public class CustomerService {
     @Autowired
     CustomerMapper customerMapper;
 
-    private Customer queryByOpenid(String openid) {
+    public Customer queryByOpenid(String openid) {
         return customerMapper.selectByOpenid(openid);
     }
 }
