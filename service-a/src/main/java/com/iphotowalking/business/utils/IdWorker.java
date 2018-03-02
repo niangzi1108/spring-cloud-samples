@@ -1,4 +1,4 @@
-package com.iphotowalking.servicea.utils;
+package com.iphotowalking.business.utils;
 
 /**
  * 分布式自增长ID

@@ -1,4 +1,4 @@
-package com.iphotowalking.servicea.web;
+package com.iphotowalking.business.web;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

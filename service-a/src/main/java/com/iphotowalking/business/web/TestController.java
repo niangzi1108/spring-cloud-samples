@@ -1,7 +1,5 @@
-package com.iphotowalking.servicea.web;
+package com.iphotowalking.business.web;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;

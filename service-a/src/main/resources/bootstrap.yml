@@ -12,7 +12,7 @@ spring:
         enabled: true
         service-id: config-server
       #配置文件名(多配置文件逗号隔开）
-      name: db,base
+      name: base,db,redis
 
 server:
   port: 7071

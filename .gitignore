@@ -1,0 +1,6 @@
+#idea files
+.idea/
+*.iml
+src/main/java/com/iphotowalking/business/mybatis/
+src/main/resources/mapper/
+src/main/resources/rebel.xml
