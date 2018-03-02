@@ -1,5 +1,6 @@
 package com.iphotowalking.business.web;
 
+import com.iphotowalking.business.common.WResponse;
 import com.iphotowalking.business.mybatis.model.Customer;
 import com.iphotowalking.business.service.CustomerService;
 import org.slf4j.Logger;
@@ -33,9 +34,10 @@ public class CustomerController {
     }
 
     @GetMapping("/getall/{pageNum}/{pageSize}")
-    public List<Customer> findAllUsersPage(@PathVariable("pageNum") int pageNum,@PathVariable("pageSize") int pageSize){
+    public WResponse findAllUsersPage(@PathVariable("pageNum") int pageNum, @PathVariable("pageSize") int pageSize){
         logger.info("pageNum:{},pageSize:{}",pageNum,pageSize);
 
-        return customerService.findAllCustomers(pageNum,pageSize);
+        List<Customer> list =  customerService.findAllCustomers(pageNum,pageSize);
+        return new WResponse(list);
     }
 }
