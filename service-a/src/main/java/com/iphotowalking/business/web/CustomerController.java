@@ -2,13 +2,13 @@ package com.iphotowalking.business.web;
 
 import com.iphotowalking.business.mybatis.model.Customer;
 import com.iphotowalking.business.service.CustomerService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -18,7 +18,8 @@ import java.util.Map;
 @RestController
 @RequestMapping("/user")
 public class CustomerController {
-
+    private final Logger logger = LoggerFactory.getLogger(getClass());
+    
     @Autowired
     CustomerService customerService;
 
@@ -29,5 +30,12 @@ public class CustomerController {
         Map<String,Object> retMap = new HashMap<>();
         retMap.put("name",customer.getNickname());
         return retMap;
+    }
+
+    @GetMapping("/getall/{pageNum}/{pageSize}")
+    public List<Customer> findAllUsersPage(@PathVariable("pageNum") int pageNum,@PathVariable("pageSize") int pageSize){
+        logger.info("pageNum:{},pageSize:{}",pageNum,pageSize);
+
+        return customerService.findAllCustomers(pageNum,pageSize);
     }
 }

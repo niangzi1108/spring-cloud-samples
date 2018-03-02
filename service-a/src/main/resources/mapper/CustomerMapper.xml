@@ -31,4 +31,9 @@
   <select id="selectByOpenid" resultType="com.iphotowalking.business.mybatis.model.Customer">
     select * from di_customer where open_id = #{openid}
   </select>
+  <select id="selectAllCustomers" resultType="com.iphotowalking.business.mybatis.model.Customer">
+    select
+    <include refid="Base_Column_List" />
+    from di_customer
+  </select>
 </mapper>

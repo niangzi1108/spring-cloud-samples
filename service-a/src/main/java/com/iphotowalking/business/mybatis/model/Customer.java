@@ -1,5 +1,7 @@
 package com.iphotowalking.business.mybatis.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 public class Customer {
@@ -29,8 +31,9 @@ public class Customer {
 
     private Byte status;
 
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date create_time;
-
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date up_time;
 
     public Integer getCustomer_id() {
